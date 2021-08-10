@@ -1,0 +1,20 @@
+OSLab class takes standard input using scanner and produces output.
+
+It has module class that includes def, use, text arrays which represents three lines indicated in the input.
+Also, it has defelem array that keeps the elemeents of the def array so that later on, we don't print out duplicate def element.
+
+Once reading in the inputs, we use array and fixed size(since there are always three parts for each module, size is fixed) to seperate
+each module and store them.
+
+Then, we first produce symbol table by creating base number that starts from 0 and increment whenever they have number of text elements.
+So that as modules go on, each symbol can add their address plus the base number.
+And we keep the elements in the defelem so that we can store them and put error message if there are duplicates.
+
+Then we have memory map, that produces the end addresses.
+I created the loops to separate between 1,2,3, 4 so that we know what type of elements they are.
+If the last number of each element is 1 or 2, they pretty much use the same element, adn if it is 3, then we gotta add up the base
+addresses, and if it's 4, then we first find out the corresponding index using use array, and add the numbers in symbol table to the 
+corresponding element. If it has 777 included in the elements of text array, and if it matches with the number of element in
+use array, then we print of that number, and other 777 numbers correspond with the elements of use array from back of the array,
+so match them using if loop.
+Print all addresses using 1,2,3, or 4 of the last digit.
